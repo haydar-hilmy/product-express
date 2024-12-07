@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('includes/head', { title: 'Add Note' }) %>
+  <link rel="stylesheet" href="/styles/posts.css">
+</head>
+
+<body>
+  <div class="">
+    <%- include('includes/navbar') %>
+    <main style="margin-left: 17%;" class="px-8" id="all-posts">
+      <%- include('includes/header', {title: "Update Notes"}) %>
+
+      <div class="w-full flex justify-center">
+        <form class="w-1/2 flex flex-col gap-4" action="/notes/<%= note._id %>/edit" method="POST">
+          <div class="flex flex-col gap-2">
+            <label>Notes Title</label>
+            <input value="<%= note.title %>" required class="rounded-md px-4 py-2 bg-black placeholder:text-[#ffffff5b] focus:text-white" placeholder="Fill ur Title" name="title" type="text">
+          </div>
+          <div class="flex flex-col gap-2">
+            <label>Content</label>
+            <textarea name="content" placeholder="Fill note content" class="rounded-md px-4 py-2 bg-black placeholder:text-[#ffffff5b] focus:text-white"><%= note.content %></textarea>
+          </div>
+          <div class="flex flex-col gap-2">
+            <label for="author">Select Category</label>
+            <select required class="rounded-md px-4 py-2 bg-black placeholder:text-[#ffffff5b] focus:text-white" id="author" name="category">
+              <% for(const cat of category){%>
+              <option value="<%= cat._id %>" <%= String(cat._id) === String(note.category.id) ? 'selected' : 'asas' %>>
+                <%= cat.name %>
+              </option>
+              <%}%>
+            </select>
+        </div>
+        <button class="rounded-md px-4 py-2 bg-blue-900 text-white">Edit Note</button>
+      </form>
+    </div>
+
+    </main>
+  </div>
+</body>
+
+</html>

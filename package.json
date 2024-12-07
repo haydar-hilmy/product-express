@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-ejs-layouts": "^2.5.1",
+    "mongodb": "^6.11.0"
+  },
+  "name": "aplikasi_blog",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16"
+  },
+  "scripts": {
+    "tailwindcss": "tailwindcss -i ./public/tailwind/tailwind.css -o ./public/tailwind/style.css --watch",
+    "watch": "node app.js",
+    "start": "npm-run-all --parallel watch tailwindcss"
+  },
+  "author": "Haydar",
+  "license": "ISC",
+  "description": ""
+}

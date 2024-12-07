@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('includes/head', { title: 'Home - Note App' }) %>
+  <link rel="stylesheet" href="/styles/posts.css">
+</head>
+
+<body>
+  <div class="">
+    <%- include('includes/navbar') %>
+    <main style="margin-left: 17%;" class="px-8" id="all-posts">
+      <%- include('includes/header', {title: "Recent Notes"}) %>
+
+      <% if(!notes||notes.length==0) {%>
+
+      <div>No Notes Found</div>
+
+      <% } else { %>
+      <div class="grid grid-cols-3 gap-3">
+        <% for(const note of notes){ %>
+        <%- include('includes/note-item',{note:note}) %>
+        <% } %>
+      </div>
+      <% } %>
+    </main>
+  </div>
+</body>
+
+</html>

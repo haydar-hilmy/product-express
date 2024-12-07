@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('includes/head', { title: 'Home - Note App' }) %>
+  <link rel="stylesheet" href="/styles/posts.css">
+</head>
+
+<body>
+  <div class="">
+    <%- include('includes/navbar') %>
+    <main style="margin-left: 17%;" class="px-8" id="all-posts">
+      <%- include('includes/header', {title: "Categories"}) %>
+
+      <form action="/add-category" method="post">
+        <div class="flex flex-row items-center gap-2 my-5">
+          <input autofocus required class="w-fit rounded-md px-4 py-2 bg-black placeholder:text-[#ffffff5b] focus:text-white" placeholder="Category Name" name="category" type="text">
+          <button class="rounded-md px-4 py-2 bg-blue-900 text-white">Add Category</button>
+        </div>
+      </form>
+
+      <div class="flex flex-wrap gap-2">
+        <% for(const cat of category){%>
+        <%- include('components/box/box', {box: cat}) %>
+        <%}%>
+        </div>
+    </main>
+  </div>
+</body>
+
+</html>
