@@ -3,7 +3,7 @@
 Author: Haydar Hilmy
 
 ---
-- Building Note App with Express.js Integrated
+- Building Product Management App with Express.js Integrated
 - Using MongoDB as Database
 
 
