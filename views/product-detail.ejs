@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('includes/head', { title: 'View Product' }) %>
+  <link rel="stylesheet" href="/styles/posts.css">
+</head>
+
+<body>
+  <div class="">
+    <%- include('includes/navbar') %>
+    <main style="margin-left: 17%;" class="px-8" id="all-posts">
+      <%- include('includes/header', {title: "Detail Products"}) %>
+
+      <div>
+        <div class="flex items-start py-2">
+          <div style="flex: 1">
+            <h1 class="text-3xl font-semibold"><%= product.name %></h1>
+            <div>
+              <span class="text-base font-light"><%= product.category.name %> - <span class="text-xs font-light"><%= product.category.id %></span></span>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <a title="back" class="duration-75 hover:text-white" href="/"><i class="fas fa-arrow-left"></i></a>
+            <a class="duration-75 hover:text-white" href="/product/<%= product._id %>/edit"><i class="fas fa-pencil"></i></a>
+            <form action="/products/<%= product._id %>/delete" method="post">
+              <button class="duration-75 hover:text-white" type="submit"><i class="fas fa-trash"></i></button>
+            </form>
+          </div>
+        </div>
+
+        <article>
+          <div class="flex flex-col">
+            <span class="text-lg">Stock : <%= product.stock %></span>
+            <span class="font-bold text-lg">Rp. <%= product.price %></span>
+          </div>
+        </article>
+
+      </div>
+
+    </main>
+  </div>
+</body>
+
+</html>

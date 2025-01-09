@@ -1,5 +1,5 @@
-# Server Side Programming - Study Class
-#### Note App - Express.js Integrated
+# Server Side Programming - Study Class [EXAM]
+#### Product Management App - ExpressJS Integrated
 Author: Haydar Hilmy
 
 ---

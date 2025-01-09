@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('includes/head', { title: 'Login - Products App' }) %>
+  <link rel="stylesheet" href="/styles/posts.css">
+</head>
+
+<body>
+  <main>
+    <div class="flex h-screen w-screen justify-center items-center">
+      <form method="POST" action="/login" class="w-1/2">
+        <div class="flex flex-col gap-4">
+          <h1 class="text-3xl">Login - Product App</h1>
+          <div class="flex flex-col gap-2">
+            <label for="username">Username</label>
+            <input required id="username" class="rounded-md px-4 py-2 bg-black placeholder:text-[#ffffff5b] focus:text-white" placeholder="Username" name="username" type="text">
+          </div>
+          <div class="flex flex-col gap-2">
+            <label for="password">Password</label>
+            <input required id="password" class="rounded-md px-4 py-2 bg-black placeholder:text-[#ffffff5b] focus:text-white" placeholder="Password" name="password" type="password">
+          </div>
+          <div class="flex flex-col gap-3">
+            <% if (errorMessage) { %>
+            <div>
+              <span class="text-sm text-red-400"><%= errorMessage %></span>
+            </div>
+            <% } %>
+            <div>
+              <button class="cursor-pointer rounded-md px-4 py-2 bg-blue-900 text-white">Login</button>
+              <a href="/register" class="cursor-pointer rounded-md px-4 py-2 text-white">Register</a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+
+</html>

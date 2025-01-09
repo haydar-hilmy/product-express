@@ -1,0 +1,20 @@
+<div class="bg-[#000] w-full rounded-xl p-5">
+  <div class="flex flex-col gap-0">
+    <span class="text-xs text-gray-500"><%= product.category.id %></span>
+    <span class="text-sm font-bold"><%= product.category.name %></span>
+    <h2 class="text-2xl font-semibold"><%= product.name %></h2>
+  </div>
+
+  <article>
+    <h3 class="text-xl">Rp. <%= product.price %></h3>
+    <h3>Stock : <%= product.stock %></h3>
+  </article>
+  
+  <div class="flex flex-row justify-end gap-3">
+    <a class="duration-75 hover:text-white" href="/product/<%= product._id %>" target="_self"><i class="fas fa-eye"></i></a>
+    <a class="duration-75 hover:text-white" href="/product/<%= product._id %>/edit"><i class="fas fa-pencil"></i></a>
+    <form action="/products/<%= product._id %>/delete" method="POST">
+      <button class="duration-75 hover:text-white" type="submit"><i class="fas fa-trash"></i></button>
+    </form>
+  </div>
+</div>

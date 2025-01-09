@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <%- include('includes/head', { title: 'Home - Note App' }) %>
+  <%- include('includes/head', { title: 'Home - Product App' }) %>
   <link rel="stylesheet" href="/styles/posts.css">
 </head>
 
@@ -10,16 +10,16 @@
   <div class="">
     <%- include('includes/navbar') %>
     <main style="margin-left: 17%;" class="px-8" id="all-posts">
-      <%- include('includes/header', {title: "Recent Notes"}) %>
+      <%- include('includes/header', {title: "Products"}) %>
 
-      <% if(!notes||notes.length==0) {%>
+      <% if(!products||products.length==0) {%>
 
-      <div>No Notes Found</div>
+      <div>No Product Found</div>
 
       <% } else { %>
       <div class="grid grid-cols-3 gap-3">
-        <% for(const note of notes){ %>
-        <%- include('includes/note-item',{note:note}) %>
+        <% for(const product of products){ %>
+        <%- include('includes/product-item',{product:product}) %>
         <% } %>
       </div>
       <% } %>
